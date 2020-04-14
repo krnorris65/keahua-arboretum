@@ -5,5 +5,6 @@ from .walking import IWalking
 from .swimming import ISwimming
 from .identifiable import Identifiable
 from .animal.freshwater import IFreshwater
+from .animal.stagnant import IStagnant
 from .habitat.contains_animals import IContainsAnimals
 from .habitat.contains_plants import IContainsPlants

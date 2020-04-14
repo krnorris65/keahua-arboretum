@@ -5,6 +5,7 @@ from .animal.aquatic import IAquatic
 from .animal.flying import IFlying
 from .animal.freshwater import IFreshwater
 from .animal.saltwater import ISaltwater
+from .animal.freshsaltwater import IFreshSaltwater
 from .animal.stagnant import IStagnant
 from .animal.swimming import ISwimming
 from .animal.walking import IWalking

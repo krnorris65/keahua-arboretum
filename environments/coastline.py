@@ -15,5 +15,10 @@ class Coastline(IContainsAnimals, IContainsPlants, Identifiable):
         return self._IContainsAnimals__animals
 
     def add_animal(self, animal):
-        self._IContainsAnimals__animals.append(animal)
+        try:
+            if animal.aquatic and (animal.cell_type == "hypotonic" or animal.cell_type == "isotonic"):
+                self._IContainsAnimals__animals.append(animal)
+        except AttributeError:
+            raise AttributeError(
+                "Cannot add non-aquatic, or freshwater animals to a coastline")
  

@@ -1,7 +1,5 @@
 # from interfaces import IAquatic
-from interfaces import Identifiable
-from interfaces import IContainsAnimals
-from interfaces import IContainsPlants
+from interfaces import Identifiable, IContainsAnimals, IContainsPlants
 # from animals import RiverDolphin
 
 
@@ -19,7 +17,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable):
 
     def add_animal(self, animal):
         try:
-            if animal.aquatic and animal.cell_type == "hypertonic":
+            if animal.aquatic and (animal.cell_type == "hypertonic" or animal.cell_type == "isotonic"):
                 self._IContainsAnimals__animals.append(animal)
         except AttributeError:
             raise AttributeError(

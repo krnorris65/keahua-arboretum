@@ -1,4 +1,4 @@
 class IContainsAnimals():
 
     def __init__(self):
-        self.animals = []
+        self.__animals = []

@@ -6,3 +6,4 @@ from .freshsaltwater import IFreshSaltwater
 from .stagnant import IStagnant
 from .swimming import ISwimming
 from .walking import IWalking
+from .shade import IShade

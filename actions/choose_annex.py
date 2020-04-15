@@ -1,5 +1,5 @@
 import os
-from environments import River, Coastline
+from environments import River, Coastline, Forest
 
 
 def choose_annex(arboretum, animal, options, display="initial"):
@@ -33,6 +33,8 @@ def choose_annex(arboretum, animal, options, display="initial"):
             print(f'{index + 1}. River ({len(option.animals)} animals)')
         elif(type(option) == Coastline):
             print(f'{index + 1}. Coastline ({len(option.animals)} animals)')
+        elif(type(option) == Forest):
+            print(f'{index + 1}. Forest ({len(option.animals)} animals)')
 
     print("")
     print("Release the animal into which biome?")
@@ -55,6 +57,14 @@ def choose_annex(arboretum, animal, options, display="initial"):
             coastline = arboretum.coastlines[coastline_index]
             if not coastline.animals_at_capacity:
                 coastline.add_animal(animal)
+            else:
+                # raise exception when animal can't be added to biome
+                raise Exception  
+        elif(type(chosen_option) == Forest):
+            forest_index = arboretum.forests.index(chosen_option)
+            forest = arboretum.forests[forest_index]
+            if not forest.animals_at_capacity:
+                forest.add_animal(animal)
             else:
                 # raise exception when animal can't be added to biome
                 raise Exception  

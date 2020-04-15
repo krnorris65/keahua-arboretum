@@ -52,7 +52,12 @@ def choose_annex(arboretum, animal, options, display="initial"):
                 raise Exception  
         elif(type(chosen_option) == Coastline):
             coastline_index = arboretum.coastlines.index(chosen_option)
-            arboretum.coastlines[coastline_index].add_animal(animal)
+            coastline = arboretum.coastlines[coastline_index]
+            if not coastline.animals_at_capacity:
+                coastline.add_animal(animal)
+            else:
+                # raise exception when animal can't be added to biome
+                raise Exception  
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
         choose_annex(arboretum, animal, options, "invalid")

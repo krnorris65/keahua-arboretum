@@ -3,6 +3,15 @@ from environments import River, Coastline
 
 
 def choose_annex(arboretum, animal, options, display="initial"):
+    '''
+        Presents list of biomes a user can choose to release a selected animal to.
+
+        Arguments: 
+            arboretum- that animal will be released to
+            animal- the animal that will be released
+            options- the options of biomes in the arboretum that animal can be released to
+            display (optional)- what display message should appear when this function executes. default value is initial
+    '''
     os.system('cls' if os.name == 'nt' else 'clear')
 
 

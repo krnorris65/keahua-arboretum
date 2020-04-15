@@ -9,6 +9,7 @@ class River(IContainsAnimals, IContainsPlants, Identifiable):
         IContainsAnimals.__init__(self)
         IContainsPlants.__init__(self)
         Identifiable.__init__(self)
+        self.animal_capacity = 12
     
 
     @property
@@ -22,13 +23,6 @@ class River(IContainsAnimals, IContainsPlants, Identifiable):
         except AttributeError:
             raise AttributeError(
                 "Cannot add non-aquatic, or saltwater animals to a river")
-    
-    @property
-    def animals_at_capacity(self):
-        if len(self._IContainsAnimals__animals) == 2:
-            return True
-        else:
-            return False
 
     def add_plant(self, plant):
         try:

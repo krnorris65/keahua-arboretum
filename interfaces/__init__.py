@@ -9,6 +9,7 @@ from .animal.freshsaltwater import IFreshSaltwater
 from .animal.stagnant import IStagnant
 from .animal.swimming import ISwimming
 from .animal.walking import IWalking
+from .animal.shade import IShade
 
 from .habitat.contains_animals import IContainsAnimals
 from .habitat.contains_plants import IContainsPlants

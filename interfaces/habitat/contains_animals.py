@@ -5,6 +5,10 @@ class IContainsAnimals():
         self.animal_capacity = 0
     
     @property
+    def animals(self):
+        return self.__animals
+        
+    @property
     def animals_at_capacity(self):
         if len(self._IContainsAnimals__animals) == self.animal_capacity:
             return True

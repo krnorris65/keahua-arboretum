@@ -11,11 +11,6 @@ class Coastline(IContainsAnimals, IContainsPlants, Identifiable):
         Identifiable.__init__(self)
         self.animal_capacity = 15
 
-
-    @property
-    def animals(self):
-        return self._IContainsAnimals__animals
-
     def add_animal(self, animal):
         try:
             if animal.aquatic and (animal.cell_type == "hypotonic" or animal.cell_type == "isotonic"):

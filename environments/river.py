@@ -12,9 +12,6 @@ class River(IContainsAnimals, IContainsPlants, Identifiable):
         self.animal_capacity = 12
     
 
-    @property
-    def animals(self):
-        return self._IContainsAnimals__animals
 
     def add_animal(self, animal):
         try:

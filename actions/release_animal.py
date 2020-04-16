@@ -1,5 +1,5 @@
 import os
-from animals import RiverDolphin, GoldDustDayGecko
+from animals import RiverDolphin, GoldDustDayGecko, NeneGoose
 from environments import River, Coastline
 from .choose_annex import choose_annex
 
@@ -15,20 +15,28 @@ def release_animal(arboretum):
 
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
+    print("3. Nene Goose")
 
     choice = input("Choose animal to release > ")
 
     if choice == "1":
         animal = RiverDolphin()
-
         # river dolphin can go in either a river or coastline
         annex_options = arboretum.rivers + arboretum.coastlines
-        choose_annex(arboretum, animal, annex_options)
+
     if choice == "2":
         animal = GoldDustDayGecko()
-
         # geckos can only be released to the forest
-        choose_annex(arboretum, animal, arboretum.forests)
+        annex_options = arboretum.forests
+
+    if choice == "3":
+        animal = NeneGoose()
+        # nene goose can only be released to grasslands
+        annex_options = arboretum.grasslands
+
+    
+    choose_annex(arboretum, animal, annex_options)
+
 
 
 

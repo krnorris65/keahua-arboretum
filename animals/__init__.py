@@ -4,3 +4,4 @@ from .gold_dust_day_gecko import GoldDustDayGecko
 from .nene_goose import NeneGoose
 from .kikakapu import Kikakapu
 from .pueo import Pueo
+from .ulae import Ulae

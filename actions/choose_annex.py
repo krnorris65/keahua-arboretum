@@ -1,5 +1,5 @@
 import os
-from environments import River, Coastline, Forest, Grassland
+from environments import River, Coastline, Forest, Grassland, Swamp
 
 
 def choose_annex(arboretum, animal, options, display="initial"):
@@ -37,6 +37,8 @@ def choose_annex(arboretum, animal, options, display="initial"):
             print(f'{index + 1}. Forest ({len(option.animals)} animals)')
         elif(type(option) == Grassland):
             print(f'{index + 1}. Grassland ({len(option.animals)} animals)')
+        elif(type(option) == Swamp):
+            print(f'{index + 1}. Swamp ({len(option.animals)} animals)')
 
     print("")
     print("Release the animal into which biome?")
@@ -65,6 +67,11 @@ def choose_annex(arboretum, animal, options, display="initial"):
             grassland_index = arboretum.grasslands.index(chosen_option)
             grassland = arboretum.grasslands[grassland_index]
             grassland.add_animal(animal)
+
+        elif(type(chosen_option) == Swamp):
+            swamp_index = arboretum.swamps.index(chosen_option)
+            swamp = arboretum.swamps[swamp_index]
+            swamp.add_animal(animal)
 
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"

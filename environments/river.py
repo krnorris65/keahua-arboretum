@@ -15,16 +15,20 @@ class River(IContainsAnimals, IContainsPlants, Identifiable):
 
     def add_animal(self, animal):
         try:
-            if animal.aquatic and (animal.cell_type == "hypertonic" or animal.cell_type == "isotonic"):
-                self._IContainsAnimals__animals.append(animal)
+            # check to see if the biome is at capacity, if it is raise an exception that will be handled in choose_annex.py
+            if not self.animals_at_capacity:
+                if animal.aquatic and (animal.cell_type == "hypertonic" or animal.cell_type == "isotonic"):
+                    self._IContainsAnimals__animals.append(animal)
+            else:
+                raise Exception
         except AttributeError:
-            raise AttributeError(
-                "Cannot add non-aquatic, or saltwater animals to a river")
+            print("Cannot add non-aquatic, or saltwater animals to a river")
 
     def add_plant(self, plant):
         try:
-            if plant.freshwater and plant.requires_current:
-                self.plants.append(plant)
+                if plant.freshwater and plant.requires_current:
+                    self.plants.append(plant)
+
         except AttributeError:
             raise AttributeError(
                 "Cannot add plants that require brackish water or stagnant water to a river biome")

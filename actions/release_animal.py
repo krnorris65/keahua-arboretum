@@ -12,6 +12,7 @@ def release_animal(arboretum):
     '''
     os.system('cls' if os.name == 'nt' else 'clear')
     animal = None
+    annex_options = []
 
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")

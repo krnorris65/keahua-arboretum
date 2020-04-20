@@ -49,35 +49,23 @@ def choose_annex(arboretum, animal, options, display="initial"):
         if(type(chosen_option) ==River):
             river_index = arboretum.rivers.index(chosen_option)
             river = arboretum.rivers[river_index]
-            if not river.animals_at_capacity:
-                river.add_animal(animal)
-            else:
-                # raise exception when animal can't be added to biome
-                raise Exception  
+            river.add_animal(animal)
+            
         elif(type(chosen_option) == Coastline):
             coastline_index = arboretum.coastlines.index(chosen_option)
             coastline = arboretum.coastlines[coastline_index]
-            if not coastline.animals_at_capacity:
-                coastline.add_animal(animal)
-            else:
-                # raise exception when animal can't be added to biome
-                raise Exception  
+            coastline.add_animal(animal)
+
         elif(type(chosen_option) == Forest):
             forest_index = arboretum.forests.index(chosen_option)
             forest = arboretum.forests[forest_index]
-            if not forest.animals_at_capacity:
-                forest.add_animal(animal)
-            else:
-                # raise exception when animal can't be added to biome
-                raise Exception  
+            forest.add_animal(animal)
+
         elif(type(chosen_option) == Grassland):
             grassland_index = arboretum.grasslands.index(chosen_option)
             grassland = arboretum.grasslands[grassland_index]
-            if not grassland.animals_at_capacity:
-                grassland.add_animal(animal)
-            else:
-                # raise exception when animal can't be added to biome
-                raise Exception  
+            grassland.add_animal(animal)
+
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
         choose_annex(arboretum, animal, options, "invalid")

@@ -1,5 +1,5 @@
 import os
-from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea
+from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
 from environments import River, Coastline
 from .choose_annex import choose_annex
 
@@ -67,9 +67,9 @@ def release_animal(arboretum):
     
     if choice == "8":
         pass
-        # animal = HappyFaceSpider()
+        animal = HappyFaceSpider()
         # happy-face spider can only be released to swamp
-        # annex_options = arboretum.swamps
+        annex_options = arboretum.swamps
 
     
     choose_annex(arboretum, animal, annex_options)

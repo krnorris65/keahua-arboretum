@@ -6,3 +6,4 @@ from .kikakapu import Kikakapu
 from .pueo import Pueo
 from .ulae import Ulae
 from .opeapea import Opeapea
+from .happy_face_spider import HappyFaceSpider

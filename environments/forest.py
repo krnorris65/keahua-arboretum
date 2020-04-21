@@ -16,10 +16,10 @@ class Forest(IContainsAnimals, IContainsPlants, Identifiable):
         try:
             # check to see if the biome is at capacity, if it is raise an exception that will be handled in choose_annex.py
             if not self.animals_at_capacity:
-                if animal.likes_shade:
+                if animal.terrestrial:
                     self._IContainsAnimals__animals.append(animal)
             else:
                 raise Exception                    
         except AttributeError:
             raise AttributeError(
-                "Cannot add non-walking or non-flying animals to a forest")
+                "Cannot add non-terrestrial animals to a forest")

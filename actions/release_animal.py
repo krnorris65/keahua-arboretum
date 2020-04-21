@@ -23,7 +23,9 @@ def release_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    choice = input("Choose animal to release > ")
+    print("")
+    print("Choose animal to release.")
+    choice = input(" > ")
 
     if choice == "1":
         animal = RiverDolphin()
@@ -42,37 +44,34 @@ def release_animal(arboretum):
 
     
     if choice == "4":
-        pass
         animal = Kikakapu()
         # kikakapu can only be released to swamps or rivers
         annex_options = arboretum.swamps + arboretum.rivers
     
     if choice == "5":
-        pass
         animal = Pueo()
         # pueo can only be released to grasslands or forests
         annex_options = arboretum.grasslands + arboretum.forests
     
     if choice == "6":
-        pass
         animal = Ulae()
         # ulae can only be released to coastlines
         annex_options = arboretum.coastlines
     
     if choice == "7":
-        pass
         animal = Opeapea()
         # ope'ape'a can only be released to forests or mountains
         annex_options = arboretum.forests + arboretum.mountains
     
     if choice == "8":
-        pass
         animal = HappyFaceSpider()
         # happy-face spider can only be released to swamp
         annex_options = arboretum.swamps
 
-    
-    choose_annex(arboretum, animal, annex_options)
+    if not animal == None:
+        choose_annex(arboretum, animal, annex_options)
+    else:
+        input("Invalid selection. Press enter to return to main screen")
 
 
 

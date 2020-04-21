@@ -11,7 +11,9 @@ def annex_habitat(arboretum):
     print("5. Forest")
     print("6. Mountain")
 
-    choice = input("Choose your habitat > ")
+    print("")
+    print("Choose what you want to annex.")
+    choice = input(" >")
 
     if choice == "1":
         # river
@@ -36,4 +38,4 @@ def annex_habitat(arboretum):
     if choice == "6":
         # mountain
         mountain = Mountain()
-        arboretum.mountains.append(mountain)
+        arboretum.annex_mountain(mountain)

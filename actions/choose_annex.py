@@ -42,7 +42,7 @@ def choose_annex(arboretum, animal, options, display="initial", message=""):
             print(f'{index + 1}. Mountain ({len(option.animals)} animals)')
 
     print("")
-    print("Release the animal into which biome?")
+    print(f"Release the {animal.species} into which biome?")
 
     choice = input("> ")
     try:

@@ -1,5 +1,5 @@
 import os
-from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae
+from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea
 from environments import River, Coastline
 from .choose_annex import choose_annex
 
@@ -61,9 +61,9 @@ def release_animal(arboretum):
     
     if choice == "7":
         pass
-        # animal = Opeapea()
+        animal = Opeapea()
         # ope'ape'a can only be released to forests or mountains
-        # annex_options = arboretum.forests + arboretum.mountains
+        annex_options = arboretum.forests + arboretum.mountains
     
     if choice == "8":
         pass

@@ -1,8 +1,8 @@
 import os
-from environments import River, Coastline, Forest, Grassland, Swamp
+from environments import River, Coastline, Forest, Grassland, Swamp, Mountain
 
 
-def choose_annex(arboretum, animal, options, display="initial"):
+def choose_annex(arboretum, animal, options, display="initial", message=""):
     '''
         Presents list of biomes a user can choose to release a selected animal to.
 
@@ -14,15 +14,14 @@ def choose_annex(arboretum, animal, options, display="initial"):
     '''
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
     if display == "initial":
         print("**** Please select a biome ****")
 
     if display == "error":
-        print("**** That biome is not large enough, please choose another one ****")
+        print(f"**** {message}, please choose another biome ****")
 
     if display == "invalid":
-        print("**** Invalid Selection, please choose another one ****")
+        print("**** Invalid Selection, please choose another biome ****")
     
     print("(Press enter to return to Main Screen)")
     print("")
@@ -39,6 +38,8 @@ def choose_annex(arboretum, animal, options, display="initial"):
             print(f'{index + 1}. Grassland ({len(option.animals)} animals)')
         elif(type(option) == Swamp):
             print(f'{index + 1}. Swamp ({len(option.animals)} animals)')
+        elif(type(option) == Mountain):
+            print(f'{index + 1}. Mountain ({len(option.animals)} animals)')
 
     print("")
     print("Release the animal into which biome?")
@@ -73,12 +74,19 @@ def choose_annex(arboretum, animal, options, display="initial"):
             swamp = arboretum.swamps[swamp_index]
             swamp.add_animal(animal)
 
+        elif(type(chosen_option) == Mountain):
+            mountain_index = arboretum.mountains.index(chosen_option)
+            mountain = arboretum.mountains[mountain_index]
+            mountain.add_animal(animal)
+
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
         choose_annex(arboretum, animal, options, "invalid")
     except ValueError:
         # User entered value other than a number
         pass
+    except AttributeError as error:
+        choose_annex(arboretum, animal, options, "error", error)
     except Exception:
         # when an exception is raised from a conditional, run choose_annex function with display="error"
-        choose_annex(arboretum, animal, options, "error")
+        choose_annex(arboretum, animal, options, "error", "Biome already at capacity")

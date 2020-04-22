@@ -15,10 +15,10 @@ class Mountain(IContainsAnimals, IContainsPlants, Identifiable):
         try:
             # check to see if the biome is at capacity, if it is raise an exception that will be handled in choose_annex.py
             if not self.animals_at_capacity:
-                if animal.terrestrial:
+                if animal.terrestrial and animal.can_handle_high_elevation:
                     self._IContainsAnimals__animals.append(animal)
             else:
                 raise Exception
         except AttributeError:
             raise AttributeError(
-                "Cannot add non-terrestrial animals to a mountain")
+                "Cannot add non-terrestrial animals or animals that cannot handle high elevation to a mountain")

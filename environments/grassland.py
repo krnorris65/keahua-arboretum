@@ -16,9 +16,9 @@ class Grassland(IContainsAnimals, IContainsPlants, Identifiable):
         try:
             # check to see if the biome is at capacity, if it is raise an exception that will be handled in choose_annex.py
             if not self.animals_at_capacity:
-                if animal.wing_count > 0:
+                if animal.terrestrial and animal.can_handle_less_rain:
                     self._IContainsAnimals__animals.append(animal)
             else:
                 raise Exception
         except AttributeError:
-            print("Cannot add non-flying animals to a grassland")
+            print("Cannot add add non-terrestrial animals or animals that need a lot of rain to a grassland")

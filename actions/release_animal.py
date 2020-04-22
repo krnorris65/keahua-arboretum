@@ -1,7 +1,6 @@
 import os
 from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
 from .choose_annex import choose_annex
-from helper.annex_options import get_annex_options
 
 def release_animal(arboretum):
     '''
@@ -51,9 +50,7 @@ def release_animal(arboretum):
         animal = HappyFaceSpider()
 
     if not animal == None:
-        # determines what biomes can hold that animal
-        list_of_options = get_annex_options(animal, arboretum)
-        choose_annex(arboretum, animal, list_of_options)
+        choose_annex(arboretum, animal)
     else:
         input("Invalid selection. Press enter to return to main screen")
 

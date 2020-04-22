@@ -9,3 +9,4 @@ from .swimming import ISwimming
 from .walking import IWalking
 from .shade import IShade
 from .high_elevation import IHighElevation
+from .little_rainfall import ILittleRainfall

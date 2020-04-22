@@ -10,6 +10,10 @@ class Arboretum:
         self.__coastlines = []
 
     @property
+    def all_biomes(self):
+        return self.__rivers + self.__grasslands + self.__swamps + self.__mountains + self.__forests + self.__coastlines
+
+    @property
     def rivers(self):
         return self.__rivers
     

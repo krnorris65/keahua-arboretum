@@ -9,6 +9,7 @@ class Forest(IContainsAnimals, IContainsPlants, Identifiable):
         IContainsAnimals.__init__(self)
         IContainsPlants.__init__(self)
         Identifiable.__init__(self)
+        self.type = "Forest"
         self.animal_capacity = 20
 
 

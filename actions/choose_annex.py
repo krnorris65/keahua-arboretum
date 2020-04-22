@@ -28,6 +28,8 @@ def choose_annex(arboretum, animal, options, display="initial", message=""):
 
     
     for index, option in enumerate(options):
+        print(f'{index + 1}. {option.name} ({len(option.animals)} animals)')
+    for index, option in enumerate(options):
         if(type(option) == River):
             print(f'{index + 1}. River ({len(option.animals)} animals)')
         elif(type(option) == Coastline):

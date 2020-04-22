@@ -80,5 +80,4 @@ def choose_annex(arboretum, animal, display="initial", message=""):
         choose_annex(arboretum, animal, list_of_options, "error", error)
     except Exception:
         # when an exception is raised from a conditional, run choose_annex function with display="error"
-        choose_annex(arboretum, animal, list_of_options,
-                     "error", "Biome already at capacity")
+        choose_annex(arboretum, animal, list_of_options, "error", "Biome already at capacity")

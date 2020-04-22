@@ -28,20 +28,7 @@ def choose_annex(arboretum, animal, options, display="initial", message=""):
 
     
     for index, option in enumerate(options):
-        print(f'{index + 1}. {option.name} ({len(option.animals)} animals)')
-    for index, option in enumerate(options):
-        if(type(option) == River):
-            print(f'{index + 1}. River ({len(option.animals)} animals)')
-        elif(type(option) == Coastline):
-            print(f'{index + 1}. Coastline ({len(option.animals)} animals)')
-        elif(type(option) == Forest):
-            print(f'{index + 1}. Forest ({len(option.animals)} animals)')
-        elif(type(option) == Grassland):
-            print(f'{index + 1}. Grassland ({len(option.animals)} animals)')
-        elif(type(option) == Swamp):
-            print(f'{index + 1}. Swamp ({len(option.animals)} animals)')
-        elif(type(option) == Mountain):
-            print(f'{index + 1}. Mountain ({len(option.animals)} animals)')
+        print(f'{index + 1}. {option.type} ({len(option.animals)} animals)')
 
     print("")
     print(f"Release the {animal.species} into which biome?")

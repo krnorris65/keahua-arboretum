@@ -4,13 +4,8 @@ from interfaces import Identifiable, IFlying, IHighElevation, IShade
 class Opeapea(Animal, Identifiable, IFlying, IHighElevation, IShade):
 
     def __init__(self):
-        Animal.__init__(self, "Ope'ape'a")
+        Animal.__init__(self, "Ope'ape'a", [ "Insects", "Vegetation"])
         Identifiable.__init__(self)
         IFlying.__init__(self)
         IHighElevation.__init__(self)
         IShade.__init__(self)
-        self.__prey = [ "Insects", "Vegetation"]
-
-    @property
-    def prey(self):
-        return self.__prey

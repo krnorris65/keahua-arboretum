@@ -72,4 +72,5 @@ def feed_animal(arboretum):
 
     food_type = animal_to_feed.prey[int(chosen_food) - 1]
 
+    animal_to_feed.feed(food_type)
     input(food_type)

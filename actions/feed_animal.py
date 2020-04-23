@@ -67,5 +67,9 @@ def feed_animal(arboretum):
 
     for index, food in enumerate(animal_to_feed.prey):
         print(f"{index + 1}. {food}")
-         
-    input(">")
+
+    chosen_food = input(">")
+
+    food_type = animal_to_feed.prey[int(chosen_food) - 1]
+
+    input(food_type)

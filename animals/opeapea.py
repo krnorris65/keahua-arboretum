@@ -9,7 +9,7 @@ class Opeapea(Animal, Identifiable, IFlying, IHighElevation, IShade):
         IFlying.__init__(self)
         IHighElevation.__init__(self)
         IShade.__init__(self)
-        self.__prey = { "Insects", "Vegetation"}
+        self.__prey = [ "Insects", "Vegetation"]
 
     @property
     def prey(self):

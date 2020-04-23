@@ -9,7 +9,7 @@ class Pueo(Animal, Identifiable, IFlying, IShade, ILittleRainfall):
         IFlying.__init__(self)
         IShade.__init__(self)
         ILittleRainfall.__init__(self)
-        self.__prey = { "Rodents" }
+        self.__prey =  ["Rodents"] 
 
     @property
     def prey(self):

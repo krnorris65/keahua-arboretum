@@ -9,7 +9,7 @@ class NeneGoose(Animal, Identifiable, IWalking, IFlying, ILittleRainfall):
         IWalking.__init__(self)
         IFlying.__init__(self)
         ILittleRainfall.__init__(self)
-        self.__prey = { "Plants" }
+        self.__prey =  ["Plants"] 
 
     @property
     def prey(self):

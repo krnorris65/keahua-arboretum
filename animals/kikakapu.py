@@ -9,7 +9,7 @@ class Kikakapu(Animal, Identifiable, ISwimming, IStagnant, IFreshwater):
         ISwimming.__init__(self)
         IStagnant.__init__(self)
         IFreshwater.__init__(self)
-        self.__prey = { "Worms", "Sea Sponges", "Jellyfish", "Corals", "Molluscs" }
+        self.__prey = ["Worms", "Sea Sponges", "Jellyfish", "Corals", "Molluscs"]
 
     @property
     def prey(self):

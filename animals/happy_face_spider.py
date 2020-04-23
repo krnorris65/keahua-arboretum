@@ -9,3 +9,7 @@ class HappyFaceSpider(Animal, Identifiable, IWalking, IStagnant):
         IWalking.__init__(self, 8)
         IStagnant.__init__(self)
         self.__prey = { "Insects"}
+
+    @property
+    def prey(self):
+        return self.__prey

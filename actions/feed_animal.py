@@ -55,8 +55,17 @@ def feed_animal(arboretum):
 
     animals_in_arboretum = get_animals(selected_animal, arboretum)
 
+    os.system('clear')
+    print(f"Which {selected_animal} do you want to feed?")
     for index, animal in enumerate(animals_in_arboretum):
         shortened_id = str(animal.id)[0:8]
         print(f"{index + 1}. {animal.species} {shortened_id}")
     
+    selection = input(">")
+
+    animal_to_feed = animals_in_arboretum[int(selection) - 1]
+
+    for index, food in enumerate(animal_to_feed.prey):
+        print(f"{index + 1}. {food}")
+         
     input(">")

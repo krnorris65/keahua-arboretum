@@ -10,3 +10,7 @@ class Pueo(Animal, Identifiable, IFlying, IShade, ILittleRainfall):
         IShade.__init__(self)
         ILittleRainfall.__init__(self)
         self.__prey = { "Rodents" }
+
+    @property
+    def prey(self):
+        return self.__prey

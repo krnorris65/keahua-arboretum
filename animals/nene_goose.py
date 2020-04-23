@@ -10,3 +10,7 @@ class NeneGoose(Animal, Identifiable, IWalking, IFlying, ILittleRainfall):
         IFlying.__init__(self)
         ILittleRainfall.__init__(self)
         self.__prey = { "Plants" }
+
+    @property
+    def prey(self):
+        return self.__prey

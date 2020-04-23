@@ -1,9 +1,11 @@
 import os
 from arboretum import Arboretum
 from actions import annex_habitat, release_animal, feed_animal, build_facility_report
+from helper.populate_arboretum import populate_arboretum
 
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
+populate_arboretum(keahua)
 
 def build_menu():
     os.system('cls' if os.name == 'nt' else 'clear')

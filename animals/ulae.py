@@ -9,3 +9,7 @@ class Ulae(Animal, Identifiable, ISwimming, ISaltwater):
         ISwimming.__init__(self)
         ISaltwater.__init__(self)
         self.__prey = { "Fish"}
+
+    @property
+    def prey(self):
+        return self.__prey

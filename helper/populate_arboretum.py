@@ -3,6 +3,11 @@ from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, U
 
 
 def populate_arboretum(arboretum):
+    '''
+        Populates the arboretum with one of each environment and one of each appropriate animal within that environment
+
+        Arguments: arboretum that user wants to populate
+    '''
     river = River()
     dolphin_r = RiverDolphin()
     kikakapu_r = Kikakapu()

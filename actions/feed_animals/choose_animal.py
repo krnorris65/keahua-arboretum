@@ -10,7 +10,7 @@ def choose_animal(selected_animal, arboretum):
     print(f"Which {selected_animal} do you want to feed?")
 
     for index, animal in enumerate(animals):
-        shortened_id = str(animal.id)[0:8]
+        shortened_id = str(animal.id)[:8]
         print(f"{index + 1}. {animal.species} {shortened_id}")
 
     selection = input(">")

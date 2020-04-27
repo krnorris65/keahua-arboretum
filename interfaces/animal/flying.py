@@ -1,4 +1,4 @@
-from .terrestrial import ITerrestrial
+from interfaces import ITerrestrial
 class IFlying(ITerrestrial):
 
     def __init__(self, wing_count=2):

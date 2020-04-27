@@ -1,10 +1,10 @@
 import os
 from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
-from .choose_annex import choose_annex
+from actions import choose_biome
 
 def release_animal(arboretum):
     '''
-        Presents list of animals a user can choose to release into a biome in their arboretum. When the user selects an animal it creates an instance of that animal, determines which annexes can hold that animal and invokes the choose_annex function
+        Presents list of animals a user can choose to release into a biome in their arboretum. When the user selects an animal it creates an instance of that animal, determines which annexes can hold that animal and invokes the choose_biome function
 
         Arguments: 
             arboretum that animal will be released to
@@ -50,7 +50,7 @@ def release_animal(arboretum):
         animal = HappyFaceSpider()
 
     if not animal == None:
-        choose_annex(arboretum, animal)
+        choose_biome(arboretum, animal)
     else:
         input("Invalid selection. Press enter to return to main screen")
 

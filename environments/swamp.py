@@ -15,17 +15,30 @@ class Swamp(IContainsAnimals, IContainsPlants, Identifiable):
         Identifiable.__init__(self)
         self.type = "Swamp"
         self.animal_capacity = 8
+        self.plant_capacity = 12
 
 
     def add_animal(self, animal):
         try:
-            # check to see if the biome is at capacity, if it is raise an exception that will be handled in choose_annex.py
+            # check to see if the biome is at capacity, if it is raise an exception
             if not self.animals_at_capacity:            
                 if animal.can_be_in_stagnant_env == True:
-                    self.animals.append(animal)
+                    self._IContainsAnimals__animals.append(animal)
             else:
                 raise Exception                    
         except AttributeError:
             raise AttributeError(
                 "This animal cannot survive in a stagnant environment")
+
+    def add_plant(self, plant):
+        try:
+            # check to see if the biome is at capacity, if it is raise an exception
+            if not self.plants_at_capacity:            
+                if plant.can_be_in_stagnant_env == True:
+                    self._IContainsPlants__plants.append(plant)
+            else:
+                raise Exception                    
+        except AttributeError:
+            raise AttributeError(
+                "This plant cannot survive in a stagnant environment")
 

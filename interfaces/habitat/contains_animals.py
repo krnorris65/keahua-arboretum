@@ -14,3 +14,8 @@ class IContainsAnimals():
             return True
         else:
             return False
+
+    # basic add animal method
+    def add_animal(self, new_animal):
+        if not self.animals_at_capacity:
+            self.__animals.append(new_animal)

@@ -1,6 +1,9 @@
 import os
 
 from helper.annex_animals import get_animals
+from helper.feed_menu_helpers import food_menu
+
+from .choose_animal import animal_menu
 
 def feed_animal(arboretum):
     '''Presents a list of animals a user can feed.
@@ -53,32 +56,19 @@ def feed_animal(arboretum):
     if choice == "8":
         selected_animal = "Hawaiian Happy-Face Spider"
 
-    try:
-        if selected_animal != None:
-            animals_in_arboretum = get_animals(selected_animal, arboretum)
 
-            os.system('clear')
-            print(f"Which {selected_animal} do you want to feed?")
-            for index, animal in enumerate(animals_in_arboretum):
-                shortened_id = str(animal.id)[0:8]
-                print(f"{index + 1}. {animal.species} {shortened_id}")
-            
-            selection = input(">")
+    if selected_animal != None:
+        animal_menu(selected_animal, arboretum)
 
-            animal_to_feed = animals_in_arboretum[int(selection) - 1]
 
-            os.system('clear')
-            print(f"What would you like to feed the {selected_animal}?")
-            for index, food in enumerate(animal_to_feed.prey):
-                print(f"{index + 1}. {food}")
+        # os.system('clear')
+        # print(f"What would you like to feed the {selected_animal}?")
+        # chosen_food = food_menu(animal_to_feed)
 
-            chosen_food = input(">")
+        # food_type = animal_to_feed.prey[int(chosen_food) - 1]
 
-            food_type = animal_to_feed.prey[int(chosen_food) - 1]
+        # animal_to_feed.feed(food_type)
+        # print()
+        # input("Press enter to return to the main menu...")
 
-            animal_to_feed.feed(food_type)
-            print()
-            input("Press enter to return to the main menu...")
-    except:
-        input("Invalid input. Press enter to return to the main menu")
 

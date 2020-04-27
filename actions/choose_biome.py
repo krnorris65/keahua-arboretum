@@ -6,12 +6,12 @@ from plants import Plant
 
 def choose_biome(arboretum, inhabitant, display="initial", message=""):
     '''
-        Presents list of biomes a user can choose to release a selected animal to.
+        Presents list of biomes a user can choose to release a selected animal or plant to.
 
         Arguments: 
-            arboretum- that animal will be released to
-            animal- the animal that will be released
-            options- the options of biomes in the arboretum that animal can be released to
+            arboretum- that animal or plant will be released to
+            inhabitant- the animal or plant that will be released
+            options- the options of biomes in the arboretum that animal or plant can be released to
             display (optional)- what display message should appear when this function executes. default value is initial
     '''
     os.system('cls' if os.name == 'nt' else 'clear')

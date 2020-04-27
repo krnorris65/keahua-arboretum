@@ -1,6 +1,6 @@
 import os
 
-from helper.annex_animals import get_animals
+from helper.get_animals import get_animals
 from .choose_food import choose_food
 
 def choose_animal(selected_animal, arboretum):

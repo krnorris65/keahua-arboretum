@@ -2,7 +2,7 @@ import os
 from helper.annex_options import get_annex_options
 
 
-def choose_annex(arboretum, animal, display="initial", message=""):
+def choose_biome(arboretum, animal, display="initial", message=""):
     '''
         Presents list of biomes a user can choose to release a selected animal to.
 
@@ -72,12 +72,12 @@ def choose_annex(arboretum, animal, display="initial", message=""):
 
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
-        choose_annex(arboretum, animal, list_of_options, "invalid")
+        choose_biome(arboretum, animal, list_of_options, "invalid")
     except ValueError:
         # User entered value other than a number
         pass
     except AttributeError as error:
-        choose_annex(arboretum, animal, list_of_options, "error", error)
+        choose_biome(arboretum, animal, list_of_options, "error", error)
     except Exception:
         # when an exception is raised from a conditional, run choose_annex function with display="error"
-        choose_annex(arboretum, animal, list_of_options, "error", "Biome already at capacity")
+        choose_biome(arboretum, animal, list_of_options, "error", "Biome already at capacity")

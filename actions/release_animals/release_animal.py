@@ -1,6 +1,6 @@
 import os
 from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
-from .choose_annex import choose_annex
+from .choose_biome import choose_biome
 
 def release_animal(arboretum):
     '''
@@ -50,7 +50,7 @@ def release_animal(arboretum):
         animal = HappyFaceSpider()
 
     if not animal == None:
-        choose_annex(arboretum, animal)
+        choose_biome(arboretum, animal)
     else:
         input("Invalid selection. Press enter to return to main screen")
 

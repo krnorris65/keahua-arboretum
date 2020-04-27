@@ -1,5 +1,7 @@
 import os
 from plants import BlueJadeVine, MountainAppleTree, Silversword, RainbowEucalyptusTree
+from actions import choose_biome
+
 
 def cultivate_plant(arboretum):
     '''
@@ -32,3 +34,7 @@ def cultivate_plant(arboretum):
     if choice == "4":
         plant = BlueJadeVine()
     
+    if not plant == None:
+        choose_biome(arboretum, plant)
+    else:
+        input("Invalid selection. Press enter to return to main screen")

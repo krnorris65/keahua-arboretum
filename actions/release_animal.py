@@ -1,6 +1,6 @@
 import os
 from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
-from .choose_biome import choose_biome
+from actions import choose_biome
 
 def release_animal(arboretum):
     '''

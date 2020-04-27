@@ -1,4 +1,4 @@
-from .terrestrial import ITerrestrial
+from interfaces import ITerrestrial
 
 class IWalking(ITerrestrial):
 

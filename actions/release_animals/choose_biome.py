@@ -1,5 +1,5 @@
 import os
-from helper.annex_options import get_annex_options
+from helper.biome_options import get_biome_options
 
 
 def choose_biome(arboretum, animal, display="initial", message=""):
@@ -15,7 +15,7 @@ def choose_biome(arboretum, animal, display="initial", message=""):
     os.system('cls' if os.name == 'nt' else 'clear')
 
     # determines what biomes can hold that animal
-    list_of_options = get_annex_options(animal, arboretum)
+    list_of_options = get_biome_options(animal, arboretum)
 
     if display == "initial":
         print("**** Please select a biome ****")

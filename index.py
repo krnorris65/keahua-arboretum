@@ -1,6 +1,6 @@
 import os
 from arboretum import Arboretum
-from actions import annex_habitat, release_animal, feed_animal, build_facility_report
+from actions import annex_habitat, release_animal, feed_animal, build_facility_report, cultivate_plant
 from helper.populate_arboretum import populate_arboretum
 
 
@@ -36,7 +36,7 @@ def main_menu():
         feed_animal(keahua)
 
     if choice == "4":
-        pass
+        cultivate_plant(keahua)
 
     if choice == "5":
         build_facility_report(keahua)

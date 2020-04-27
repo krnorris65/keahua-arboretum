@@ -1,8 +1,10 @@
 import os
 from helper.biome_options import get_biome_options
+from animals import Animal
+from plants import Plant
 
 
-def choose_biome(arboretum, animal, display="initial", message=""):
+def choose_biome(arboretum, inhabitant, display="initial", message=""):
     '''
         Presents list of biomes a user can choose to release a selected animal to.
 
@@ -15,7 +17,7 @@ def choose_biome(arboretum, animal, display="initial", message=""):
     os.system('cls' if os.name == 'nt' else 'clear')
 
     # determines what biomes can hold that animal
-    list_of_options = get_biome_options(animal, arboretum)
+    list_of_options = get_biome_options(inhabitant, arboretum)
 
     if display == "initial":
         print("**** Please select a biome ****")
@@ -29,11 +31,16 @@ def choose_biome(arboretum, animal, display="initial", message=""):
     print("(Press enter to return to Main Screen)")
     print("")
 
+
     for index, option in enumerate(list_of_options):
-        print(f'{index + 1}. {option.type} ({len(option.animals)} animals)')
+        if isinstance(inhabitant, Animal):
+            print(f'{index + 1}. {option.type} ({len(option.animals)} animals)')
+        if isinstance(inhabitant, Plant):
+            print(f'{index + 1}. {option.type} ({len(option.plants)} plants)')
+
 
     print("")
-    print(f"Release the {animal.species} into which biome?")
+    print(f"Release the {inhabitant.species} into which biome?")
 
     choice = input("> ")
     try:
@@ -43,41 +50,59 @@ def choose_biome(arboretum, animal, display="initial", message=""):
         if(chosen_option.type == "River"):
             river_index = arboretum.rivers.index(chosen_option)
             river = arboretum.rivers[river_index]
-            river.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                river.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                river.add_plant(inhabitant)
 
         elif(chosen_option.type == "Coastline"):
             coastline_index = arboretum.coastlines.index(chosen_option)
             coastline = arboretum.coastlines[coastline_index]
-            coastline.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                coastline.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                coastline.add_plant(inhabitant)
 
         elif(chosen_option.type == "Forest"):
             forest_index = arboretum.forests.index(chosen_option)
             forest = arboretum.forests[forest_index]
-            forest.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                forest.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                forest.add_plant(inhabitant)
 
         elif(chosen_option.type == "Grassland"):
             grassland_index = arboretum.grasslands.index(chosen_option)
             grassland = arboretum.grasslands[grassland_index]
-            grassland.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                grassland.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                grassland.add_plant(inhabitant)
 
         elif(chosen_option.type == "Swamp"):
             swamp_index = arboretum.swamps.index(chosen_option)
             swamp = arboretum.swamps[swamp_index]
-            swamp.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                swamp.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                swamp.add_plant(inhabitant)
 
         elif(chosen_option.type == "Mountain"):
             mountain_index = arboretum.mountains.index(chosen_option)
             mountain = arboretum.mountains[mountain_index]
-            mountain.add_animal(animal)
+            if isinstance(inhabitant, Animal):
+                mountain.add_animal(inhabitant)
+            if isinstance(inhabitant, Plant):
+                mountain.add_plant(inhabitant)
 
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
-        choose_biome(arboretum, animal, list_of_options, "invalid")
+        choose_biome(arboretum, inhabitant, list_of_options, "invalid")
     except ValueError:
         # User entered value other than a number
         pass
     except AttributeError as error:
-        choose_biome(arboretum, animal, list_of_options, "error", error)
+        choose_biome(arboretum, inhabitant, list_of_options, "error", error)
     except Exception:
         # when an exception is raised from a conditional, run choose_annex function with display="error"
-        choose_biome(arboretum, animal, list_of_options, "error", "Biome already at capacity")
+        choose_biome(arboretum, inhabitant, list_of_options, "error", "Biome already at capacity")

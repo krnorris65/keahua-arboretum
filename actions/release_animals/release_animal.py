@@ -4,7 +4,7 @@ from .choose_biome import choose_biome
 
 def release_animal(arboretum):
     '''
-        Presents list of animals a user can choose to release into a biome in their arboretum. When the user selects an animal it creates an instance of that animal, determines which annexes can hold that animal and invokes the choose_annex function
+        Presents list of animals a user can choose to release into a biome in their arboretum. When the user selects an animal it creates an instance of that animal, determines which annexes can hold that animal and invokes the choose_biome function
 
         Arguments: 
             arboretum that animal will be released to

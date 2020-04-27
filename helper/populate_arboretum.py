@@ -1,5 +1,6 @@
 from environments import River, Swamp, Coastline, Grassland, Forest, Mountain
 from animals import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider
+from plants import BlueJadeVine, MountainAppleTree, RainbowEucalyptusTree, Silversword
 
 
 def populate_arboretum(arboretum):

@@ -97,12 +97,12 @@ def choose_biome(arboretum, inhabitant, display="initial", message=""):
 
     except IndexError:
         # User entered invalid option, run choose_annex function with display="invalid"
-        choose_biome(arboretum, inhabitant, list_of_options, "invalid")
+        choose_biome(arboretum, inhabitant, "invalid")
     except ValueError:
         # User entered value other than a number
         pass
     except AttributeError as error:
-        choose_biome(arboretum, inhabitant, list_of_options, "error", error)
+        choose_biome(arboretum, inhabitant, "error", error)
     except Exception:
         # when an exception is raised from a conditional, run choose_annex function with display="error"
-        choose_biome(arboretum, inhabitant, list_of_options, "error", "Biome already at capacity")
+        choose_biome(arboretum, inhabitant, "error", "Biome already at capacity")

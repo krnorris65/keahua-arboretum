@@ -11,8 +11,7 @@ def annex_habitat(arboretum):
     print("5. Forest")
     print("6. Mountain")
 
-    print("")
-    print("Choose what you want to annex.")
+    print("\nChoose what you want to annex.")
     choice = input(" >")
 
     if choice == "1":

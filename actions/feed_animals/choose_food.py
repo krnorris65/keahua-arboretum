@@ -13,8 +13,7 @@ def choose_food(animal):
         food_type = animal.prey[int(chosen_food) - 1]
 
         animal.feed(food_type)
-        print()
-        input("Press enter to return to the main menu...")
+        input("\nPress enter to return to the main menu...")
     except IndexError:
         os.system('clear')
         input("Invalid selection. Press enter to choose again.")

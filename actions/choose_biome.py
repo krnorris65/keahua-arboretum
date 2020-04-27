@@ -28,8 +28,7 @@ def choose_biome(arboretum, inhabitant, display="initial", message=""):
     if display == "invalid":
         print("**** Invalid Selection, please choose another biome ****")
 
-    print("(Press enter to return to Main Screen)")
-    print("")
+    print("(Press enter to return to Main Screen)\n")
 
 
     for index, option in enumerate(list_of_options):
@@ -39,8 +38,7 @@ def choose_biome(arboretum, inhabitant, display="initial", message=""):
             print(f'{index + 1}. {option.type} ({len(option.plants)} plants)')
 
 
-    print("")
-    print(f"Release the {inhabitant.species} into which biome?")
+    print(f"\nRelease the {inhabitant.species} into which biome?")
 
     choice = input("> ")
     try:

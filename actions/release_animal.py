@@ -21,8 +21,7 @@ def release_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    print("")
-    print("Choose animal to release.")
+    print("\nChoose animal to release.")
     choice = input(" > ")
 
     if choice == "1":

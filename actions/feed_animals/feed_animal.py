@@ -25,8 +25,7 @@ def feed_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    print("")
-    print("Choose type of animal to feed.")
+    print("\nChoose type of animal to feed.")
     choice = input(" > ")
 
     if choice == "1":

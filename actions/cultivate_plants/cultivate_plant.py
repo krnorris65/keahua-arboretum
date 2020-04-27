@@ -1,4 +1,6 @@
 import os
+from plants import BlueJadeVine, MountainAppleTree, Silversword, RainbowEucalyptusTree
+
 def cultivate_plant(arboretum):
     '''
         Presents list of plants a user can choose to cultivate in a biome in their arboretum. When the user selects a plant it creates an instance of that plant, determines which biomes can hold that plant and invokes the choose_location function
@@ -17,3 +19,16 @@ def cultivate_plant(arboretum):
     print("")
     print("Choose plant to cultivate.")
     choice = input(" > ")
+
+    if choice == "1":
+        plant = MountainAppleTree()
+    
+    if choice == "2":
+        plant = Silversword()
+    
+    if choice == "3":
+        plant = RainbowEucalyptusTree()
+    
+    if choice == "4":
+        plant = BlueJadeVine()
+    

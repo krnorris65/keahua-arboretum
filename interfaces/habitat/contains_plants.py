@@ -14,3 +14,8 @@ class IContainsPlants():
             return True
         else:
             return False
+
+    # basic add plant method
+    def add_plant(self, new_plant):
+        if not self.plants_at_capacity:
+            self.__plants.append(new_plant)

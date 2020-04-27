@@ -1,6 +1,10 @@
-from helper.annex_animals import get_animals
+import os
 
-def animal_menu(selected_animal, arboretum):
+from helper.annex_animals import get_animals
+from .choose_food import choose_food
+
+def choose_animal(selected_animal, arboretum):
+    os.system('cls' if os.name == 'nt' else 'clear')
     animals = get_animals(selected_animal, arboretum)
 
     print(f"Which {selected_animal} do you want to feed?")
@@ -12,6 +16,10 @@ def animal_menu(selected_animal, arboretum):
     selection = input(">")
     try:
         feed_this_animal = animals[int(selection) - 1]
-        return feed_this_animal
+        choose_food(feed_this_animal)
+    except IndexError:
+        os.system('clear')
+        input("Invalid selection. Press enter to choose again.")
+        choose_animal(selected_animal, arboretum)
     except:
-        animal_menu(selected_animal, arboretum)
+        pass

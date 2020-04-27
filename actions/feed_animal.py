@@ -1,9 +1,6 @@
 import os
 
-from helper.annex_animals import get_animals
-from helper.feed_menu_helpers import food_menu
-
-from .choose_animal import animal_menu
+from .choose_animal import choose_animal
 
 def feed_animal(arboretum):
     '''Presents a list of animals a user can feed.
@@ -13,7 +10,7 @@ def feed_animal(arboretum):
     '''
     # list all types of animals
     # once user selects an animal, create a list of all that animal in the arboretum (organize by biome)
-    # from that list select a specfic animal to feed
+    # from that list select a specific animal to feed
     # once an animal is selected, display a menu of available food 
     # select type of food to feed animal and display message showing the animal was fed
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -58,17 +55,7 @@ def feed_animal(arboretum):
 
 
     if selected_animal != None:
-        animal_menu(selected_animal, arboretum)
+        choose_animal(selected_animal, arboretum)
 
-
-        # os.system('clear')
-        # print(f"What would you like to feed the {selected_animal}?")
-        # chosen_food = food_menu(animal_to_feed)
-
-        # food_type = animal_to_feed.prey[int(chosen_food) - 1]
-
-        # animal_to_feed.feed(food_type)
-        # print()
-        # input("Press enter to return to the main menu...")
 
 
